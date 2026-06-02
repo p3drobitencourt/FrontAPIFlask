@@ -1,0 +1,6 @@
+{
+  "name": "Simulador RAG - Barter & Fertilizantes",
+  "description": "Um painel didático completo e assistente chatbot com técnica RAG (Retrieval-Augmented Generation) para Operações de Barter e Fertilizantes rurais.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

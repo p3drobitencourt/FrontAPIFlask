@@ -19,7 +19,7 @@ export default function RAGChatbot() {
   const chatApiBaseUrl = (import.meta as ImportMeta & {
     env?: { VITE_API_BASE_URL?: string };
   }).env?.VITE_API_BASE_URL || "https://apiflask-chatbot.onrender.com";
-  const chatApiUrl = `${chatApiBaseUrl.replace(/\/$/, "")}/api/chat`;
+  const chatApiUrl = `${chatApiBaseUrl.replace(/\/$/, "")}/api`;
 
   const sampleQuestions = [
     "Como funciona o barter por fertilizantes?",

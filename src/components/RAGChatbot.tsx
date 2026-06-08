@@ -16,6 +16,10 @@ export default function RAGChatbot() {
   const [retrievalStats, setRetrievalStats] = useState<any>(null);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatApiBaseUrl = (import.meta as ImportMeta & {
+    env?: { VITE_API_BASE_URL?: string };
+  }).env?.VITE_API_BASE_URL || "https://apiflask-chatbot.onrender.com";
+  const chatApiUrl = `${chatApiBaseUrl.replace(/\/$/, "")}/api/chat`;
 
   const sampleQuestions = [
     "Como funciona o barter por fertilizantes?",
@@ -60,7 +64,7 @@ export default function RAGChatbot() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("/api/chat", {
+      const response = await fetch(chatApiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: textToSend }),
